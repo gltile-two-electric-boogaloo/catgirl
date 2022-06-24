@@ -19,7 +19,7 @@ app.add_middleware(CORSMiddleware,
                    allow_methods=["*"],
                    allow_headers=["*"])
 session: aiohttp.ClientSession
-redis = aioredis.Redis(host=os.environ['redis_url'])
+redis: aioredis.Redis
 secret = os.environ['secret']
 hostname = os.environ['host']
 
@@ -57,6 +57,11 @@ async def get_submit():
 async def get_session():
     global session
     session = aiohttp.ClientSession()
+
+
+async def get_redis():
+    global redis
+    redis = aioredis.Redis(host=os.environ['redis_url'])
 
 
 if __name__ == "__main__":

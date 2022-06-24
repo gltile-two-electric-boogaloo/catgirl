@@ -1,5 +1,5 @@
 api_addr = "https://vault.internal.api.gltile.dev"
-plugin_directory = "/home/gltile/plugins"
+plugin_directory = "/root/plugins"
 default_max_request_duration = "90s"
 disable_clustering = true
 disable_mlock = true
